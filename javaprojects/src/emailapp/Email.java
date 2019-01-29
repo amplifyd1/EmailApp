@@ -33,7 +33,7 @@ public class Email {
 	//Ask for department
 	
 	private String setDepartment() {
-		System.out.print("Enter the department \n1 for sales\n2 for Development\n3 for Accounting\0 for none:\n");
+		System.out.print("New Worker: " + firstName + " " + lastName + "\nEnter the department \n1 for sales\n2 for Development\n3 for Accounting\0 for none:\n");
 		Scanner in = new Scanner(System.in);
 		int depChoice = in.nextInt();
 		if (depChoice == 1) { return "sales"; }
@@ -63,6 +63,16 @@ public class Email {
 	
 	public void changePassword(String password) {
 		this.password = password;
+	}
+	
+	public int getMailboxCapacity() { return mailboxCapacity; }
+	public String getAlternateEmail() { return alternateEmail; }
+	public String getPassword() { return password; }
+	
+	public String showInfo() {
+		return "DISPLAY NAME: " + firstName + " " + lastName + 
+				" COMPANY EMAIL: " + email + 
+				" MAILBOX CAPACITY: " + mailboxCapacity + "mb";
 	}
 }
 
